@@ -15,3 +15,5 @@ preg_match('/HTTP\/\d(?:\.\d)?\s+(\d+)\s+/',$rawResponseHeader, $match);
 env.php設定
 1.  google: google api json位置
 2.  fb: app_id app_secret
+3.  google_redirectUrl
+4.  fb_redirectUrl

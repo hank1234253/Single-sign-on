@@ -15,7 +15,8 @@
     
 
     
-
+    //google
+    $google_url = $client->createAuthUrl();
 
     //fb
     $helper = $fb->getRedirectLoginHelper();
@@ -38,11 +39,11 @@
         // access token from $_SESSION['facebook_access_token']
     }
     $permissions = ['email'];
-    $loginUrl = $helper->getLoginUrl('http://localhost/fb_login.php', $permissions);
+    $loginUrl = $helper->getLoginUrl($fb_redirectUrl, $permissions);
 
 
     ?>
-    <form action="<?= $url ?>" method="post">
+    <form action="<?= $google_url ?>" method="post">
         <button class="gsi-material-button" type="submit">
             <div class="gsi-material-button-state"></div>
             <div class="gsi-material-button-content-wrapper">
