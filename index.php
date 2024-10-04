@@ -19,25 +19,6 @@
     $google_url = $client->createAuthUrl();
 
     //fb
-    $helper = $fb->getRedirectLoginHelper();
-    try {
-        $accessToken = $helper->getAccessToken();
-    } catch (Facebook\Exception\FacebookResponseException $e) {
-        // When Graph returns an error
-        echo 'Graph returned an error: ' . $e->getMessage();
-        exit;
-    } catch (Facebook\Exception\FacebookSDKException $e) {
-        // When validation fails or other local issues
-        echo 'Facebook SDK returned an error: ' . $e->getMessage();
-        exit;
-    }
-    if (isset($accessToken)) {
-        // Logged in!
-        $_SESSION['facebook_access_token'] = (string) $accessToken;
-
-        // Now you can redirect to another page and use the
-        // access token from $_SESSION['facebook_access_token']
-    }
     $permissions = ['email'];
     $loginUrl = $helper->getLoginUrl($fb_redirectUrl, $permissions);
 

@@ -6,6 +6,7 @@ $fb_redirectUrl='http://localhost/fb_login.php';
 $client = new Google\Client();
 $client->setAuthConfig("your_google_api.json");
 
+
 $client->setRedirectUri($google_redirectUrl);
 $client->addScope('profile');
 $client->addScope('email');
@@ -14,6 +15,6 @@ $client->addScope('email');
 $fb = new Facebook\Facebook([
     'app_id' => 'your fb app id',
     'app_secret' => 'your fb app secret',
-
     'default_graph_version' => 'v2.10',
 ]);
+$helper = $fb->getRedirectLoginHelper();
